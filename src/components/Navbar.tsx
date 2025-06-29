@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import logo from '../assets/Logo VideoFoto360.svg';
 
 // Smooth scroll to element
 export const scrollTo = (id: string) => {
@@ -88,9 +89,7 @@ const Navbar = () => {
         <nav className="flex justify-between items-center h-full">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <span className="text-2xl md:text-3xl font-display font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              VideoFoto360
-            </span>
+            <img src={logo} alt="VideoFoto360 Logo" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

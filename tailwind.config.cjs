@@ -30,14 +30,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
   ],
-  // Configuración de purga para producción (usando la sintaxis de Tailwind CSS v3)
-  darkMode: false, // or 'media' or 'class'
-  variants: {
-    extend: {},
-  },
   corePlugins: {
     preflight: true,
   },
-  // Deshabilitar el modo JIT para evitar conflictos
-  mode: 'jit'
 }
