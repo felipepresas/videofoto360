@@ -9,6 +9,7 @@ import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import IntroVideo from './components/ui/IntroVideo';
+import ScrollToTop from './components/ui/ScrollToTop';
 
 function App() {
   const location = useLocation();
@@ -32,6 +33,7 @@ function App() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
+            <ScrollToTop />
             <Navbar />
             <main className="flex-1 w-full pt-20">
               <AnimatePresence mode="wait">
