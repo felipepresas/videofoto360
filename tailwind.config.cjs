@@ -13,8 +13,8 @@ module.exports = {
         accent: '#3b82f6',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Playfair Display', 'serif'],
+        sans: ['Roboto', 'sans-serif'],
+        display: ['Roboto', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 1s ease-in-out',
