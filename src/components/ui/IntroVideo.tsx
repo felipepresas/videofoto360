@@ -32,7 +32,7 @@ const IntroVideo: React.FC<IntroVideoProps> = ({ onVideoEnd }) => {
     >
       <video
         ref={videoRef}
-        src="/src/assets/Logo animado VideoFoto360 2.mp4"
+        src="/Logo animado VideoFoto360 2.mp4"
         onEnded={onVideoEnd}
         playsInline
         muted // Es importante mantenerlo muteado para el autoplay

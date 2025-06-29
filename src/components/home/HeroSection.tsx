@@ -8,7 +8,7 @@ export const HeroSection: React.FC = () => {
       {/* Background Video */}
       <div className="absolute top-0 left-0 w-full h-full">
         <video
-          src="/src/assets/Logo animado VideoFoto360 2.mp4"
+          src="/Logo animado VideoFoto360 2.mp4"
           autoPlay
           loop
           muted
