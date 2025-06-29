@@ -17,7 +17,11 @@ import {
   faEnvelope, 
   faPhone, 
   faMapMarkerAlt,
-  faChevronDown
+  faChevronDown,
+  faCameraRetro,
+  faCheck,
+  faVideo,
+  faUserCircle
 } from '@fortawesome/free-solid-svg-icons';
 import { 
   faInstagram, 
@@ -38,6 +42,10 @@ library.add(
   faPhone, 
   faMapMarkerAlt,
   faChevronDown,
+  faCameraRetro,
+  faCheck,
+  faVideo,
+  faUserCircle,
   faInstagram, 
   faFacebook, 
   faVimeo, 

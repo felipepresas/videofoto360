@@ -33,7 +33,7 @@ export const HeroSection: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Capturamos Momentos, Contamos Historias
+          El Arte de la Primera Impresión
         </motion.h1>
         <motion.p
           className="text-lg sm:text-xl max-w-2xl mx-auto mb-8"
@@ -41,7 +41,7 @@ export const HeroSection: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Especialistas en fotografía y video para dar vida a tus ideas.
+          Fotografía y vídeo para inmobiliarias y marcas. Transformamos tus espacios en imágenes cautivadoras que venden.
         </motion.p>
         <motion.div
           className="flex items-center justify-center"

@@ -1,22 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import logo from '../assets/Logo VideoFoto360.svg';
-
-// Smooth scroll to element
-export const scrollTo = (id: string) => {
-  const element = document.getElementById(id);
-  if (element) {
-    const headerOffset = 80; // Height of your header
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth',
-    });
-  }
-};
+import logo from '@/assets/Logo VideoFoto360.svg';
+import { scrollTo } from '@/utils/scroll';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,6 +46,13 @@ const Navbar = () => {
     },
   ];
 
+  const socialLinks = [
+    { name: 'Instagram', url: 'https://www.instagram.com/videofoto360/', icon: 'instagram', ariaLabel: 'Síguenos en Instagram' },
+    { name: 'YouTube', url: 'https://www.youtube.com/@VideoFoto360', icon: 'youtube', ariaLabel: 'Visita nuestro canal de YouTube' },
+    { name: 'Facebook', url: 'https://www.facebook.com/videofoto360pontevedra/', icon: 'facebook', ariaLabel: 'Visítanos en Facebook' },
+    { name: 'WhatsApp', url: 'https://api.whatsapp.com/send/?phone=%2B34622200599&text&type=phone_number&app_absent=0', icon: 'whatsapp', ariaLabel: 'Contáctanos por WhatsApp' }
+  ];
+
   // Close mobile menu when route changes
   useEffect(() => {
     setIsOpen(false);
@@ -94,30 +87,51 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  aria-label={link.ariaLabel}
-                  onClick={(e) => {
-                    handleNavClick(e, link.path);
-                    setIsOpen(false);
-                  }}
-                  className={`px-4 py-2 text-sm font-medium transition-colors relative group focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50 rounded-md ${
-                    location.pathname === link.path.split('#')[0]
-                      ? 'text-accent font-semibold'
-                      : 'text-gray-700 hover:text-accent'
-                  }`}
-                >
-                  {link.name}
-                  <span
-                    className={`absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full ${
-                      location.pathname === link.path.split('#')[0] ? 'w-full' : ''
+            <div className="ml-10 flex items-center">
+              {/* Navigation Links */}
+              <div className="flex items-baseline space-x-4">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    aria-label={link.ariaLabel}
+                    onClick={(e) => {
+                      handleNavClick(e, link.path);
+                      setIsOpen(false);
+                    }}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors relative group focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50 ${
+                      location.pathname === link.path.split('#')[0]
+                        ? 'text-accent font-semibold'
+                        : 'text-gray-700 hover:text-accent'
                     }`}
-                  />
-                </Link>
-              ))}
+                  >
+                    {link.name}
+                    <span
+                      className={`absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full ${
+                        location.pathname === link.path.split('#')[0] ? 'w-full' : ''
+                      }`}
+                    />
+                  </Link>
+                ))}
+              </div>
+              {/* Divider */}
+              <div className="ml-6 pl-6 border-l border-gray-300 flex items-center space-x-4">
+                {socialLinks.map((social) => (
+                  <motion.a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.ariaLabel}
+                    className="text-gray-500 hover:text-accent transition-colors"
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <span className="sr-only">{social.name}</span>
+                    <i className={`fab fa-${social.icon} text-lg`}></i>
+                  </motion.a>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -195,6 +209,27 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
+              {/* Social Links for Mobile */}
+              <div className="pt-4 pb-2 px-6">
+                <div className="border-t border-gray-200"></div>
+                <div className="flex justify-center items-center space-x-6 mt-4">
+                  {socialLinks.map((social) => (
+                    <motion.a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.ariaLabel}
+                      className="text-gray-500 hover:text-accent transition-colors"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <span className="sr-only">{social.name}</span>
+                      <i className={`fab fa-${social.icon} text-2xl`}></i>
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
         )}

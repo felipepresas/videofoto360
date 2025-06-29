@@ -31,7 +31,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Conoce la historia y la pasión detrás de cada fotografía
+            La pasión y precisión detrás de cada imagen para tu marca o propiedad.
           </motion.p>
         </div>
       </section>
@@ -68,15 +68,15 @@ const About = () => {
                 Hola, soy <span className="text-accent">Antonio Presas Martinez</span>
               </h2>
               <p className="text-gray-600 mb-6">
-                Apasionado fotógrafo profesional con más de 10 años de experiencia capturando momentos únicos y creando recuerdos que perduran para siempre. Mi viaje en la fotografía comenzó cuando era solo un adolescente con una cámara prestada, y desde entonces no he dejado de explorar y perfeccionar mi arte.
+                Reflejo de una profunda pasión por la creación audiovisual. He combinado mi amor por la fotografía y el vídeo con una mirada única hacia el detalle, ofreciendo un servicio personalizado que va más allá de la simple captura de imágenes.
               </p>
               <p className="text-gray-600 mb-8">
-                Especializado en fotografía de eventos e inmobiliaria, mi objetivo es ir más allá de simplemente tomar fotos. Busco contar historias a través de mis imágenes, capturando la esencia, las emociones y la belleza en cada encuadre.
+                Cada proyecto es una oportunidad para contar algo especial y transmitir la esencia y el carácter de tu marca o propiedad. Mi especialidad es el interiorismo, la fotografía inmobiliaria y la creación de contenido visual que impulse tu negocio.
               </p>
               
               <div className="grid grid-cols-2 gap-6 mb-8">
                 {[
-                  { number: '500+', label: 'Eventos' },
+                  { number: '300+', label: 'Propiedades' },
                   { number: '1000+', label: 'Clientes' },
                   { number: '50+', label: 'Premios' },
                   { number: '10+', label: 'Años de Experiencia' },
@@ -171,19 +171,19 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                quote: "Trabajar con Antonio Presas Martinez fue una experiencia increíble. Las fotos de nuestra boda superaron todas nuestras expectativas.",
-                author: "Ana y Carlos",
-                role: "Boda"
+                quote: "El trabajo de Antonio fue impecable. Las fotografías de nuestro nuevo local comercial capturaron exactamente la atmósfera que queríamos transmitir.",
+                author: "Marketing Manager",
+                role: "Marca de Moda"
               },
               {
                 quote: "Las fotos profesionales de nuestra propiedad nos ayudaron a venderla en tiempo récord. ¡Gracias por capturar cada detalle!",
                 author: "Laura M.",
-                role: "Propietaria"
+                role: "Agente Inmobiliario"
               },
               {
-                quote: "Profesionalismo, creatividad y atención al detalle. No podría estar más contento con los resultados.",
-                author: "David R.",
-                role: "Cliente Corporativo"
+                quote: "Profesionalismo, creatividad y atención al detalle. El contenido visual para nuestras redes sociales ha mejorado notablemente.",
+                author: "CEO",
+                role: "Startup Tecnológica"
               },
             ].map((testimonial, index) => (
               <motion.div

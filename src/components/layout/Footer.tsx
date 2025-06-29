@@ -7,22 +7,28 @@ const Footer = () => {
   const socialLinks = [
     { 
       name: 'Instagram', 
-      url: 'https://instagram.com', 
+      url: 'https://www.instagram.com/videofoto360/', 
       icon: 'instagram',
       ariaLabel: 'Síguenos en Instagram' 
     },
     { 
+      name: 'YouTube', 
+      url: 'https://www.youtube.com/@VideoFoto360', 
+      icon: 'youtube',
+      ariaLabel: 'Visita nuestro canal de YouTube' 
+    },
+    { 
       name: 'Facebook', 
-      url: 'https://facebook.com', 
+      url: 'https://www.facebook.com/videofoto360pontevedra/', 
       icon: 'facebook',
       ariaLabel: 'Visítanos en Facebook' 
     },
-    { 
-      name: 'Vimeo', 
-      url: 'https://vimeo.com', 
-      icon: 'vimeo',
-      ariaLabel: 'Mira nuestros videos en Vimeo' 
-    },
+    {
+      name: 'WhatsApp',
+      url: 'https://api.whatsapp.com/send/?phone=%2B34622200599&text&type=phone_number&app_absent=0',
+      icon: 'whatsapp',
+      ariaLabel: 'Contáctanos por WhatsApp'
+    }
   ];
 
   const footerLinks = [
@@ -42,18 +48,18 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary text-white pt-16 pb-8">
+    <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="contentinfo" aria-label="Pie de página">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo y descripción */}
-          <div className="col-span-1 lg:col-span-2">
-            <Link to="/" className="text-2xl font-display font-bold text-white mb-4 inline-block">
+          <div className="space-y-4">
+            <Link to="/" className="text-2xl font-bold text-white inline-block">
               FotoPro
             </Link>
-            <p className="mt-4 text-gray-300">
-              Capturando momentos inolvidables con pasión y profesionalismo. Especialistas en fotografía de eventos e inmobiliaria.
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Capturando momentos inolvidables con profesionalismo y atención al detalle.
             </p>
-            <div className="mt-6 flex space-x-6">
+            <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.name}
@@ -61,13 +67,12 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.ariaLabel}
-                  className="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 rounded-full p-1"
+                  className="text-gray-400 hover:text-white transition-colors"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  whileFocus={{ y: -2 }}
                 >
                   <span className="sr-only">{social.name}</span>
-                  <i className={`fab fa-${social.icon} text-xl`}></i>
+                  <i className={`fab fa-${social.icon} text-lg`}></i>
                 </motion.a>
               ))}
             </div>
@@ -76,15 +81,15 @@ const Footer = () => {
           {/* Enlaces */}
           {footerLinks.map((section) => (
             <div key={section.title}>
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
+              <h3 className="text-sm font-medium text-white tracking-wider mb-4">
                 {section.title}
               </h3>
-              <ul className="mt-4 space-y-3">
+              <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <Link
                       to={link.path}
-                      className="text-base text-gray-300 hover:text-white transition-colors"
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -96,29 +101,29 @@ const Footer = () => {
 
           {/* Contacto */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
+            <h3 className="text-sm font-medium text-white tracking-wider mb-4">
               Contacto
             </h3>
-            <ul className="mt-4 space-y-3">
+            <ul className="space-y-3">
               <li className="flex items-start">
-                <i className="fas fa-envelope text-gray-300 mt-1 mr-3"></i>
-                <span>info@fotopro.com</span>
+                <i className="fas fa-envelope text-gray-400 mt-1 mr-3 text-sm"></i>
+                <span className="text-sm text-gray-400">info@fotopro.com</span>
               </li>
               <li className="flex items-start">
-                <i className="fas fa-phone text-gray-300 mt-1 mr-3"></i>
-                <span>+34 123 456 789</span>
+                <i className="fas fa-phone text-gray-400 mt-1 mr-3 text-sm"></i>
+                <span className="text-sm text-gray-400">+34 123 456 789</span>
               </li>
               <li className="flex items-start">
-                <i className="fas fa-map-marker-alt text-gray-300 mt-1 mr-3"></i>
-                <span>Madrid, España</span>
+                <i className="fas fa-map-marker-alt text-gray-400 mt-1 mr-3 text-sm"></i>
+                <span className="text-sm text-gray-400">Madrid, España</span>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Derechos de autor */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <p className="text-center text-gray-400 text-sm">
+        <div className="mt-12 pt-6 border-t border-gray-800">
+          <p className="text-center text-gray-500 text-xs">
             &copy; {currentYear} FotoPro. Todos los derechos reservados.
           </p>
         </div>

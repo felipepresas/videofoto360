@@ -36,6 +36,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@types/react-lazy-load-image-component": "^1.6.4",
+    "@types/react-modal-image": "^2.6.4",
     "@vitejs/plugin-react-swc": "^3.10.2",
     "autoprefixer": "^10.4.17",
     "eslint": "^9.29.0",

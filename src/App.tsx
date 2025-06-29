@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import Navbar from './components/Navbar';
 
-import Footer from './components/Footer';
-import IntroVideo from './components/ui/IntroVideo';
+import { Navbar, Footer } from '@/components/layout';
+import { IntroVideo } from '@/components/ui';
 
+import '@/styles/global/App.css';
 
 function App() {
-
   const [showIntro, setShowIntro] = useState(!sessionStorage.getItem('introPlayed'));
 
   const handleVideoEnd = () => {
@@ -29,7 +28,6 @@ function App() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-
             <Navbar />
             <main className="flex-1 w-full pt-20">
               <Outlet />
