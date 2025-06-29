@@ -11,7 +11,7 @@ const About = () => {
           <div 
             className="w-full h-full bg-cover bg-center opacity-10"
             style={{
-              backgroundImage: 'url("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop")'
+              backgroundImage: 'url("/src/assets/Yo_VideoFoto360-scaled.jpg")'
             }}
           ></div>
         </div>
@@ -49,9 +49,10 @@ const About = () => {
             >
               <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop" 
-                  alt="Fotógrafo profesional" 
-                  className="w-full h-auto"
+                  src="/src/assets/Yo_VideoFoto360-scaled.jpg" 
+                  alt="Antonio Presas Martinez - Fotógrafo profesional" 
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent rounded-full z-0 hidden lg:block"></div>

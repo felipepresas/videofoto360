@@ -38,7 +38,7 @@ declare module '*.module.css' {
 declare namespace CSS {
   interface Property {
     // Allow any property name with any value
-    [key: string]: any;
+    [key: string]: never;
   }
 }
 

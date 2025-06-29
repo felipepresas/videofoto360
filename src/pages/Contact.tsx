@@ -68,11 +68,12 @@ const Contact = () => {
         setFormStatus(prev => ({ ...prev, submitted: false }));
       }, 5000);
       
-    } catch (error) {
+    } catch (_error) {
+      console.error('Form submission error:', _error);
       setFormStatus({ 
         submitting: false, 
         submitted: false, 
-        error: 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.' 
+        error: `Error al enviar el mensaje: ${_error instanceof Error ? _error.message : 'Error desconocido'}`
       });
     }
   };

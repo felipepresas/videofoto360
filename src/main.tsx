@@ -11,6 +11,7 @@ import { router } from './config/routes';
 import Fallback from './components/ui/Fallback';
 
 // Error Boundary Component
+// eslint-disable-next-line react-refresh/only-export-components
 const ErrorBoundary = ({ children }: { children: React.ReactNode }) => (
   <ErrorBoundaryFallback>
     {children}
@@ -18,6 +19,7 @@ const ErrorBoundary = ({ children }: { children: React.ReactNode }) => (
 );
 
 // Simple Error Fallback UI
+// eslint-disable-next-line react-refresh/only-export-components
 const ErrorBoundaryFallback = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -36,6 +38,7 @@ if (!container) throw new Error('Failed to find the root element');
 const root = createRoot(container);
 
 // Create a wrapper component to handle hydration
+// eslint-disable-next-line react-refresh/only-export-components
 const App = () => (
   <Suspense fallback={<Fallback />}>
     <RouterProvider router={router} />

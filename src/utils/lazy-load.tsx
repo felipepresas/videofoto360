@@ -11,7 +11,7 @@ type LazyRoute = Omit<RouteObject, 'element' | 'children' | 'index'> & {
 export function lazyLoadRoute(route: LazyRoute): RouteObject {
   const { lazy: lazyImport, children, isIndex, ...rest } = route;
   const LazyComponent = lazy(lazyImport);
-  
+
   const routeObject: RouteObject = {
     ...rest,
     element: (
@@ -28,7 +28,8 @@ export function lazyLoadRoute(route: LazyRoute): RouteObject {
 
   // Handle index route
   if (isIndex) {
-    return { index: true, ...routeObject };
+    const { children: _, ...indexRoute } = routeObject;
+    return { ...indexRoute, index: true };
   }
 
   return routeObject;

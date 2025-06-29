@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/opacity.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 import type { Service } from '../../types';
 import ImageLoader from '../ui/ImageLoader';
 
@@ -45,7 +46,7 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ services }) 
               </div>
               <div className='p-6 flex-grow flex flex-col'>
                 <div className='flex items-center mb-3'>
-                  <FontAwesomeIcon icon={['fas', service.icon as any]} className='text-accent text-2xl mr-4' />
+                  <FontAwesomeIcon icon={service.icon as IconProp} className='text-accent text-2xl mr-4' />
                   <h3 className='text-xl font-bold text-gray-900'>{service.title}</h3>
                 </div>
                 <p className='text-gray-600 mb-4 flex-grow'>{service.description}</p>

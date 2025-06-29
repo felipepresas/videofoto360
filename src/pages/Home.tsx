@@ -36,6 +36,7 @@ const servicesData: Service[] = [
   },
 ];
 
+
 const projectsData: Project[] = [
   {
     id: 1,
