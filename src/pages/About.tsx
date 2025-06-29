@@ -65,7 +65,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl font-display font-bold text-gray-900 mb-6">
-                Hola, soy <span className="text-accent">[Tu Nombre]</span>
+                Hola, soy <span className="text-accent">Antonio Presas Martinez</span>
               </h2>
               <p className="text-gray-600 mb-6">
                 Apasionado fotógrafo profesional con más de 10 años de experiencia capturando momentos únicos y creando recuerdos que perduran para siempre. Mi viaje en la fotografía comenzó cuando era solo un adolescente con una cámara prestada, y desde entonces no he dejado de explorar y perfeccionar mi arte.
@@ -171,7 +171,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                quote: "Trabajar con [Tu Nombre] fue una experiencia increíble. Las fotos de nuestra boda superaron todas nuestras expectativas.",
+                quote: "Trabajar con Antonio Presas Martinez fue una experiencia increíble. Las fotos de nuestra boda superaron todas nuestras expectativas.",
                 author: "Ana y Carlos",
                 role: "Boda"
               },
